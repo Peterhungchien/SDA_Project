@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Achive code
-      run: zip -r release.zip . -i .
+      run: zip -r release.zip .
         
       
     
