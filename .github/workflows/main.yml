@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -20,6 +20,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         draft: false
