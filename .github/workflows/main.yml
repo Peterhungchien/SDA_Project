@@ -10,8 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:    
-    - name: List directory contents
-      run: ls
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Archive code
+       run: zip -r release.zip .
+
 
     - name: Achive code
       run: zip -r release.zip .
