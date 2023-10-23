@@ -1,5 +1,8 @@
 name: Archive Repository
 
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT }}
+
 on:
   push:
     branches:
