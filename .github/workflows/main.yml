@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get current directory
+      run: pwd
+    
+    - name: List directory contents
+      run: ls -al
+
     - name: Achive code
       run: zip -r release.zip .
         
