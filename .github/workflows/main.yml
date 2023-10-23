@@ -15,10 +15,4 @@ jobs:
 
      - name: Archive code
        run: zip -r release.zip .
-
-
-    - name: Achive code
-      run: zip -r release.zip .
         
-      
-    
