@@ -142,3 +142,6 @@ sys.path.append('../') # add the parent directory to the search path
 ```
 
 I have already uploaded a sample project under this directory. Play with it to see if you can understand how it works!
+
+# Homework 1
+In this homework, you need to claim a part of the project, create a new branch, and initialize your submodule. I now plan to divide this project into four parts: data fetching, data preprocessing, model training, and model evaluation. You can choose one part and participate in the development of that branch. For example, if you are responsible for fetching data from the web, you should create a sub directory called "data_fetching" under `SDAproject`. In this directory, there should be `data_fetching.py` file (or any other name you like) that contains the essential functionalities, a `README.md` to describe the usage of your module, and an `__init__.py` to import the functions in `data_fetching.py`. Create a pull request after you finish your work and I will review your code. If everything is fine, I will merge your changes into the main branch.
