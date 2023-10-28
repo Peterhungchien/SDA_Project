@@ -16,6 +16,8 @@ jobs:
       uses: mikepenz/release-changelog-builder-action@v4.0.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        toTag: ${{ github.run_number }}
 
     - name: Archive code
       run: zip -r archive.zip . -x "*.git*"
