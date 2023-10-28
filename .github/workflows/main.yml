@@ -5,23 +5,17 @@ on:
     branches:
       - main
 jobs:
-  draft-release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: release-drafter/release-drafter@v5
-        with:
-          config-name: release-drafter.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   publish_release:
-    needs: draft-release
     runs-on: ubuntu-latest
     steps:
-
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Build Changelog
+      id: github_release
+      uses: mikepenz/release-changelog-builder-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Archive code
       run: zip -r archive.zip . -x "*.git*"
@@ -36,6 +30,7 @@ jobs:
         release_name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
+        body: ${{ steps.github_release.outputs.changelog }}
 
     - name: Upload Release Asset
       id: upload-release-asset
