@@ -1,2 +1,0 @@
-git add tutorial/my_script.py # add your script to the staging area
-git commit -m "Add my_script.py" # commit your changes
