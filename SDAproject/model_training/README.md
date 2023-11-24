@@ -1,2 +1,2 @@
 # Model Training
-This is the setup of my submodule. You can refer to this when initializing your submodule.
+I trained XGBoost, LightGBM on the dataset and used cross validation to tune the model.
