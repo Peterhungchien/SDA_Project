@@ -1,0 +1,15 @@
+data_preprocessing:
+  missing_value_strategy: "fill_zero"  # Options: fill_zero, drop_rows, mean_imputation
+  feature_engineering:
+    moving_average_windows: [5, 10, 20]  # Example window sizes for moving averages
+
+model_training:
+  xgboost:
+    learning_rate: 0.1
+    n_estimators: 100
+  lightgbm:
+    learning_rate: 0.05
+    n_estimators: 100
+
+model_evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1_score", "sharpe_ratio"]
